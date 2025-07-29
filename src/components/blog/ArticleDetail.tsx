@@ -1,20 +1,29 @@
-import React from 'react';
-import { Calendar, Clock, ArrowLeft, Twitter, Linkedin, BookOpen, Copy } from 'lucide-react';
-import { useParams, useNavigate } from 'react-router-dom';
-import ArticleCard from './ArticleCard';
+import React from "react";
+import {
+  Calendar,
+  Clock,
+  ArrowLeft,
+  Twitter,
+  Linkedin,
+  BookOpen,
+  Copy,
+} from "lucide-react";
+import { useParams, useNavigate } from "react-router-dom";
+import ArticleCard from "./ArticleCard";
 
-interface ArticleDetailProps {
-  slug?: string;
-  onBack: () => void;
-}
+// interface ArticleDetailProps {
+//   slug?: string;
+//   onBack: () => void;
+// }
 
 // Comprehensive blog data with full content for each article
 const blogPosts = [
   {
-    id: '1',
-    slug: 'getting-started-with-react-hooks',
-    title: 'Getting Started with React Hooks: A Complete Guide',
-    excerpt: 'Learn how to use React Hooks to build more efficient and cleaner functional components. This comprehensive guide covers useState, useEffect, and custom hooks.',
+    id: "1",
+    slug: "getting-started-with-react-hooks",
+    title: "Getting Started with React Hooks: A Complete Guide",
+    excerpt:
+      "Learn how to use React Hooks to build more efficient and cleaner functional components. This comprehensive guide covers useState, useEffect, and custom hooks.",
     content: `
       <h2 id="introduction-to-react-hooks">Introduction to React Hooks</h2>
       <p>React Hooks revolutionized the way we write React components by allowing us to use state and other React features in functional components. Before hooks, you had to use class components to manage state and lifecycle methods.</p>
@@ -31,13 +40,13 @@ function Counter() {
   const [count, setCount] = useState(0);
 
   return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
-    </div>
-  );
+  &lt;div&gt;
+    &lt;p&gt;You clicked {count} times&lt;/p&gt;
+    &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+      Click me
+    &lt;/button&gt;
+  &lt;/div&gt;
+);
 }</code></pre>
       
       <h3 id="the-useeffect-hook">The useEffect Hook</h3>
@@ -53,13 +62,13 @@ function Example() {
   });
 
   return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
-    </div>
-  );
+  &lt;div&gt;
+    &lt;p&gt;You clicked {count} times&lt;/p&gt;
+    &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+      Click me
+    &lt;/button&gt;
+  &lt;/div&gt;
+);
 }</code></pre>
       
       <h2 id="custom-hooks">Custom Hooks</h2>
@@ -86,21 +95,23 @@ function Example() {
       <h2 id="conclusion">Conclusion</h2>
       <p>React Hooks provide a more direct API to the React concepts you already know. They offer a powerful and flexible way to compose behavior and share logic between components.</p>
     `,
-    featuredImage: 'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    publishDate: '2024-03-15',
+    featuredImage:
+      "https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    publishDate: "2024-03-15",
     author: {
-      name: 'Yusuf Jimoh',
-      avatar: '/yusuf-jimoh-ceo.jpg'
+      name: "Yusuf Jimoh",
+      avatar: "/yusuf-jimoh-ceo.jpg",
     },
-    readTime: '8 min read',
-    category: 'React',
-    tags: ['React', 'JavaScript', 'Frontend']
+    readTime: "8 min read",
+    category: "React",
+    tags: ["React", "JavaScript", "Frontend"],
   },
   {
-    id: '2',
-    slug: 'python-data-structures-guide',
-    title: 'Python Data Structures: Lists, Dictionaries, and Sets',
-    excerpt: 'Master Python\'s built-in data structures with practical examples and best practices. Perfect for beginners and intermediate developers.',
+    id: "2",
+    slug: "python-data-structures-guide",
+    title: "Python Data Structures: Lists, Dictionaries, and Sets",
+    excerpt:
+      "Master Python's built-in data structures with practical examples and best practices. Perfect for beginners and intermediate developers.",
     content: `
       <h2 id="introduction-to-python-data-structures">Introduction to Python Data Structures</h2>
       <p>Python offers several built-in data structures that are essential for effective programming. Understanding when and how to use each one is crucial for writing efficient Python code.</p>
@@ -185,21 +196,23 @@ difference = set1 - set2</code></pre>
         <li>Set membership test: O(1), insertion: O(1)</li>
       </ul>
     `,
-    featuredImage: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    publishDate: '2024-03-12',
+    featuredImage:
+      "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    publishDate: "2024-03-12",
     author: {
-      name: 'Yusuf Jimoh',
-      avatar: '/yusuf-jimoh-ceo.jpg'
+      name: "Yusuf Jimoh",
+      avatar: "/yusuf-jimoh-ceo.jpg",
     },
-    readTime: '12 min read',
-    category: 'Python',
-    tags: ['Python', 'Data Structures', 'Programming']
+    readTime: "12 min read",
+    category: "Python",
+    tags: ["Python", "Data Structures", "Programming"],
   },
   {
-    id: '3',
-    slug: 'go-concurrency-patterns',
-    title: 'Go Concurrency Patterns: Goroutines and Channels',
-    excerpt: 'Explore Go\'s powerful concurrency model with goroutines and channels. Learn patterns for building scalable concurrent applications.',
+    id: "3",
+    slug: "go-concurrency-patterns",
+    title: "Go Concurrency Patterns: Goroutines and Channels",
+    excerpt:
+      "Explore Go's powerful concurrency model with goroutines and channels. Learn patterns for building scalable concurrent applications.",
     content: `
       <h2 id="introduction-to-go-concurrency">Introduction to Go Concurrency</h2>
       <p>Go's concurrency model is one of its strongest features, built around the concept of goroutines and channels. This approach makes it easy to write programs that can handle thousands of concurrent operations efficiently.</p>
@@ -330,21 +343,23 @@ func main() {
       <h2 id="conclusion">Conclusion</h2>
       <p>Go's concurrency primitives make it easy to write efficient concurrent programs. By understanding goroutines, channels, and common patterns, you can build scalable applications that take full advantage of modern multi-core systems.</p>
     `,
-    featuredImage: 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    publishDate: '2024-03-10',
+    featuredImage:
+      "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    publishDate: "2024-03-10",
     author: {
-      name: 'Yusuf Jimoh',
-      avatar: '/yusuf-jimoh-ceo.jpg'
+      name: "Yusuf Jimoh",
+      avatar: "/yusuf-jimoh-ceo.jpg",
     },
-    readTime: '15 min read',
-    category: 'Go',
-    tags: ['Go', 'Concurrency', 'Backend']
+    readTime: "15 min read",
+    category: "Go",
+    tags: ["Go", "Concurrency", "Backend"],
   },
   {
-    id: '4',
-    slug: 'swift-ios-development-basics',
-    title: 'Swift for iOS Development: Building Your First App',
-    excerpt: 'Start your iOS development journey with Swift. Learn the fundamentals and build a simple but functional iOS application.',
+    id: "4",
+    slug: "swift-ios-development-basics",
+    title: "Swift for iOS Development: Building Your First App",
+    excerpt:
+      "Start your iOS development journey with Swift. Learn the fundamentals and build a simple but functional iOS application.",
     content: `
       <h2 id="introduction-to-swift">Introduction to Swift</h2>
       <p>Swift is Apple's modern programming language for iOS, macOS, watchOS, and tvOS development. It's designed to be safe, fast, and expressive, making it an excellent choice for building iOS applications.</p>
@@ -514,21 +529,23 @@ struct TodoListView: View {
       <h2 id="conclusion">Conclusion</h2>
       <p>Swift and SwiftUI provide a powerful and intuitive way to build iOS applications. With these fundamentals, you're ready to start building more complex and feature-rich iOS apps.</p>
     `,
-    featuredImage: 'https://images.pexels.com/photos/147413/twitter-facebook-together-exchange-of-information-147413.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    publishDate: '2024-03-08',
+    featuredImage:
+      "https://images.pexels.com/photos/147413/twitter-facebook-together-exchange-of-information-147413.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    publishDate: "2024-03-08",
     author: {
-      name: 'Yusuf Jimoh',
-      avatar: '/yusuf-jimoh-ceo.jpg'
+      name: "Yusuf Jimoh",
+      avatar: "/yusuf-jimoh-ceo.jpg",
     },
-    readTime: '10 min read',
-    category: 'Swift',
-    tags: ['Swift', 'iOS', 'Mobile Development']
+    readTime: "10 min read",
+    category: "Swift",
+    tags: ["Swift", "iOS", "Mobile Development"],
   },
   {
-    id: '5',
-    slug: 'javascript-async-await-guide',
-    title: 'Mastering Async/Await in JavaScript',
-    excerpt: 'Learn how to handle asynchronous operations in JavaScript using async/await. Say goodbye to callback hell and promise chains.',
+    id: "5",
+    slug: "javascript-async-await-guide",
+    title: "Mastering Async/Await in JavaScript",
+    excerpt:
+      "Learn how to handle asynchronous operations in JavaScript using async/await. Say goodbye to callback hell and promise chains.",
     content: `
       <h2 id="introduction-to-async-programming">Introduction to Async Programming</h2>
       <p>Asynchronous programming is crucial in JavaScript for handling operations that take time, such as API calls, file operations, or timers. The async/await syntax makes asynchronous code look and behave more like synchronous code.</p>
@@ -730,21 +747,23 @@ async function processItems(items) {
       <h2 id="conclusion">Conclusion</h2>
       <p>Async/await is a powerful feature that makes asynchronous JavaScript code more readable and maintainable. By understanding its proper usage, error handling, and common patterns, you can write more robust and efficient applications.</p>
     `,
-    featuredImage: 'https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    publishDate: '2024-03-05',
+    featuredImage:
+      "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    publishDate: "2024-03-05",
     author: {
-      name: 'Yusuf Jimoh',
-      avatar: '/yusuf-jimoh-ceo.jpg'
+      name: "Yusuf Jimoh",
+      avatar: "/yusuf-jimoh-ceo.jpg",
     },
-    readTime: '7 min read',
-    category: 'JavaScript',
-    tags: ['JavaScript', 'Async', 'Programming']
+    readTime: "7 min read",
+    category: "JavaScript",
+    tags: ["JavaScript", "Async", "Programming"],
   },
   {
-    id: '6',
-    slug: 'python-web-scraping-tutorial',
-    title: 'Web Scraping with Python: BeautifulSoup and Requests',
-    excerpt: 'Learn how to extract data from websites using Python. This tutorial covers BeautifulSoup, requests, and best practices for ethical scraping.',
+    id: "6",
+    slug: "python-web-scraping-tutorial",
+    title: "Web Scraping with Python: BeautifulSoup and Requests",
+    excerpt:
+      "Learn how to extract data from websites using Python. This tutorial covers BeautifulSoup, requests, and best practices for ethical scraping.",
     content: `
       <h2 id="introduction-to-web-scraping">Introduction to Web Scraping</h2>
       <p>Web scraping is a powerful technique for extracting data from websites. Python provides excellent libraries like requests and BeautifulSoup that make web scraping accessible and efficient.</p>
@@ -966,21 +985,23 @@ soup = scraper.scrape_with_retry("https://example.com")</code></pre>
       <h2 id="conclusion">Conclusion</h2>
       <p>Web scraping with Python is a powerful skill for data collection and analysis. Remember to always scrape responsibly, respect website terms of service, and implement proper error handling and rate limiting in your scrapers.</p>
     `,
-    featuredImage: 'https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    publishDate: '2024-03-03',
+    featuredImage:
+      "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    publishDate: "2024-03-03",
     author: {
-      name: 'Yusuf Jimoh',
-      avatar: '/yusuf-jimoh-ceo.jpg'
+      name: "Yusuf Jimoh",
+      avatar: "/yusuf-jimoh-ceo.jpg",
     },
-    readTime: '14 min read',
-    category: 'Python',
-    tags: ['Python', 'Web Scraping', 'Data']
+    readTime: "14 min read",
+    category: "Python",
+    tags: ["Python", "Web Scraping", "Data"],
   },
   {
-    id: '7',
-    slug: 'go-rest-api-development',
-    title: 'Building REST APIs with Go and Gin Framework',
-    excerpt: 'Create robust REST APIs using Go and the Gin web framework. Learn routing, middleware, and database integration.',
+    id: "7",
+    slug: "go-rest-api-development",
+    title: "Building REST APIs with Go and Gin Framework",
+    excerpt:
+      "Create robust REST APIs using Go and the Gin web framework. Learn routing, middleware, and database integration.",
     content: `
       <h2 id="introduction-to-go-apis">Introduction to Go APIs</h2>
       <p>Go is an excellent choice for building REST APIs due to its performance, simplicity, and excellent standard library. The Gin framework makes API development even more straightforward with its minimalist design and powerful features.</p>
@@ -1455,21 +1476,23 @@ func TestCreateBook(t *testing.T) {
       <h2 id="conclusion">Conclusion</h2>
       <p>Building REST APIs with Go and Gin is straightforward and powerful. The combination provides excellent performance, clean code structure, and robust features for building production-ready APIs.</p>
     `,
-    featuredImage: 'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    publishDate: '2024-03-01',
+    featuredImage:
+      "https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    publishDate: "2024-03-01",
     author: {
-      name: 'Yusuf Jimoh',
-      avatar: '/yusuf-jimoh-ceo.jpg'
+      name: "Yusuf Jimoh",
+      avatar: "/yusuf-jimoh-ceo.jpg",
     },
-    readTime: '18 min read',
-    category: 'Go',
-    tags: ['Go', 'API', 'Backend', 'Gin']
+    readTime: "18 min read",
+    category: "Go",
+    tags: ["Go", "API", "Backend", "Gin"],
   },
   {
-    id: '8',
-    slug: 'swift-swiftui-fundamentals',
-    title: 'SwiftUI Fundamentals: Declarative UI Development',
-    excerpt: 'Discover SwiftUI\'s declarative approach to building user interfaces. Learn views, modifiers, and state management.',
+    id: "8",
+    slug: "swift-swiftui-fundamentals",
+    title: "SwiftUI Fundamentals: Declarative UI Development",
+    excerpt:
+      "Discover SwiftUI's declarative approach to building user interfaces. Learn views, modifiers, and state management.",
     content: `
       <h2 id="introduction-to-swiftui">Introduction to SwiftUI</h2>
       <p>SwiftUI represents a paradigm shift in iOS development, moving from imperative UIKit to a declarative approach. With SwiftUI, you describe what your UI should look like and how it should behave, and the framework handles the rest.</p>
@@ -1850,21 +1873,23 @@ struct CustomViewExample: View {
       <h2 id="conclusion">Conclusion</h2>
       <p>SwiftUI's declarative approach makes building user interfaces more intuitive and maintainable. By understanding views, state management, and data flow, you can create powerful and responsive iOS applications with less code and better performance.</p>
     `,
-    featuredImage: 'https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    publishDate: '2024-02-28',
+    featuredImage:
+      "https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    publishDate: "2024-02-28",
     author: {
-      name: 'Yusuf Jimoh',
-      avatar: '/yusuf-jimoh-ceo.jpg'
+      name: "Yusuf Jimoh",
+      avatar: "/yusuf-jimoh-ceo.jpg",
     },
-    readTime: '11 min read',
-    category: 'Swift',
-    tags: ['Swift', 'SwiftUI', 'iOS', 'UI']
+    readTime: "11 min read",
+    category: "Swift",
+    tags: ["Swift", "SwiftUI", "iOS", "UI"],
   },
   {
-    id: '9',
-    slug: 'react-performance-optimization',
-    title: 'React Performance Optimization: Tips and Techniques',
-    excerpt: 'Optimize your React applications for better performance. Learn about memoization, code splitting, and profiling techniques.',
+    id: "9",
+    slug: "react-performance-optimization",
+    title: "React Performance Optimization: Tips and Techniques",
+    excerpt:
+      "Optimize your React applications for better performance. Learn about memoization, code splitting, and profiling techniques.",
     content: `
       <h2 id="introduction-to-react-performance">Introduction to React Performance</h2>
       <p>Performance optimization in React is crucial for creating smooth, responsive user experiences. This guide covers essential techniques and best practices for optimizing React applications.</p>
@@ -2281,50 +2306,61 @@ import throttle from 'lodash/throttle';</code></pre>
       <h2 id="conclusion">Conclusion</h2>
       <p>React performance optimization is about understanding when and why components re-render, and applying the right techniques to minimize unnecessary work. By using memoization, code splitting, virtualization, and proper profiling, you can build fast, responsive React applications that provide excellent user experiences.</p>
     `,
-    featuredImage: 'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    publishDate: '2024-02-25',
+    featuredImage:
+      "https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    publishDate: "2024-02-25",
     author: {
-      name: 'Yusuf Jimoh',
-      avatar: '/yusuf-jimoh-ceo.jpg'
+      name: "Yusuf Jimoh",
+      avatar: "/yusuf-jimoh-ceo.jpg",
     },
-    readTime: '13 min read',
-    category: 'React',
-    tags: ['React', 'Performance', 'Optimization']
-  }
+    readTime: "13 min read",
+    category: "React",
+    tags: ["React", "Performance", "Optimization"],
+  },
 ];
 
 const ArticleDetail: React.FC = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
 
-  const article = blogPosts.find(post => post.slug === slug) || blogPosts[0];
-  
+  const article = blogPosts.find((post) => post.slug === slug) || blogPosts[0];
+
   // Get related articles (same category, excluding current article)
   const relatedArticles = blogPosts
-    .filter(post => post.category === article.category && post.id !== article.id)
+    .filter(
+      (post) => post.category === article.category && post.id !== article.id
+    )
     .slice(0, 3);
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     });
   };
 
   const handleShare = (platform: string) => {
     const url = window.location.href;
     const title = article.title;
-    
+
     switch (platform) {
-      case 'twitter':
-        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`);
+      case "twitter":
+        window.open(
+          `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+            title
+          )}&url=${encodeURIComponent(url)}`
+        );
         break;
-      case 'linkedin':
-        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`);
+      case "linkedin":
+        window.open(
+          `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+            url
+          )}`
+        );
         break;
-      case 'copy':
+      case "copy":
         navigator.clipboard.writeText(url);
         // You could add a toast notification here
         break;
@@ -2333,16 +2369,17 @@ const ArticleDetail: React.FC = () => {
 
   // Generate table of contents from headings with proper IDs
   const generateTableOfContents = (content: string) => {
-    const headings = content.match(/<h[2-3][^>]*id="([^"]*)"[^>]*>(.*?)<\/h[2-3]>/g) || [];
+    const headings =
+      content.match(/<h[2-3][^>]*id="([^"]*)"[^>]*>(.*?)<\/h[2-3]>/g) || [];
     return headings.map((heading, index) => {
       const levelMatch = heading.match(/<h([2-3])/);
       const idMatch = heading.match(/id="([^"]*)"/);
       const textMatch = heading.match(/>([^<]*)</);
-      
+
       const level = levelMatch ? parseInt(levelMatch[1]) : 2;
-      const id = idMatch ? idMatch[1] : '';
-      const text = textMatch ? textMatch[1] : '';
-      
+      const id = idMatch ? idMatch[1] : "";
+      const text = textMatch ? textMatch[1] : "";
+
       return { level, text, id, index };
     });
   };
@@ -2352,13 +2389,14 @@ const ArticleDetail: React.FC = () => {
   // Add copy button functionality to code blocks
   React.useEffect(() => {
     const addCopyButtons = () => {
-      const codeBlocks = document.querySelectorAll('pre code');
-      codeBlocks.forEach((block, index) => {
+      const codeBlocks = document.querySelectorAll("pre code");
+      codeBlocks.forEach((block) => {
         const pre = block.parentElement;
-        if (pre && !pre.querySelector('.copy-button')) {
-          const button = document.createElement('button');
-          button.className = 'copy-button';
-          button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+        if (pre && !pre.querySelector(".copy-button")) {
+          const button = document.createElement("button");
+          button.className = "copy-button";
+          button.innerHTML =
+            '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
           button.style.cssText = `
             position: absolute;
             top: 8px;
@@ -2373,24 +2411,25 @@ const ArticleDetail: React.FC = () => {
             opacity: 0.7;
             transition: opacity 0.2s;
           `;
-          
-          button.addEventListener('click', () => {
-            navigator.clipboard.writeText(block.textContent || '');
-            button.innerHTML = 'Copied!';
+
+          button.addEventListener("click", () => {
+            navigator.clipboard.writeText(block.textContent || "");
+            button.innerHTML = "Copied!";
             setTimeout(() => {
-              button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+              button.innerHTML =
+                '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
             }, 2000);
           });
-          
-          button.addEventListener('mouseenter', () => {
-            button.style.opacity = '1';
+
+          button.addEventListener("mouseenter", () => {
+            button.style.opacity = "1";
           });
-          
-          button.addEventListener('mouseleave', () => {
-            button.style.opacity = '0.7';
+
+          button.addEventListener("mouseleave", () => {
+            button.style.opacity = "0.7";
           });
-          
-          pre.style.position = 'relative';
+
+          pre.style.position = "relative";
           pre.appendChild(button);
         }
       });
@@ -2407,7 +2446,7 @@ const ArticleDetail: React.FC = () => {
       <section className="pt-32 pb-8 bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <button
-            onClick={() => navigate('/blog')}
+            onClick={() => navigate("/blog")}
             className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 mb-6 font-medium"
           >
             <ArrowLeft className="w-5 h-5" />
@@ -2439,7 +2478,7 @@ const ArticleDetail: React.FC = () => {
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               {article.title}
             </h1>
-            
+
             <div className="flex flex-wrap items-center gap-6 text-gray-600 mb-6">
               <div className="flex items-center space-x-2">
                 <Calendar className="w-5 h-5" />
@@ -2475,21 +2514,21 @@ const ArticleDetail: React.FC = () => {
             <div className="flex items-center space-x-4">
               <span className="text-gray-600 font-medium">Share:</span>
               <button
-                onClick={() => handleShare('twitter')}
+                onClick={() => handleShare("twitter")}
                 className="flex items-center space-x-2 text-blue-500 hover:text-blue-600 transition-colors"
               >
                 <Twitter className="w-5 h-5" />
                 <span>Twitter</span>
               </button>
               <button
-                onClick={() => handleShare('linkedin')}
+                onClick={() => handleShare("linkedin")}
                 className="flex items-center space-x-2 text-blue-700 hover:text-blue-800 transition-colors"
               >
                 <Linkedin className="w-5 h-5" />
                 <span>LinkedIn</span>
               </button>
               <button
-                onClick={() => handleShare('copy')}
+                onClick={() => handleShare("copy")}
                 className="flex items-center space-x-2 text-gray-600 hover:text-gray-700 transition-colors"
               >
                 <Copy className="w-5 h-5" />
@@ -2510,7 +2549,9 @@ const ArticleDetail: React.FC = () => {
                 <div className="sticky top-8 bg-gray-50 rounded-xl p-6">
                   <div className="flex items-center space-x-2 mb-4">
                     <BookOpen className="w-5 h-5 text-blue-600" />
-                    <h3 className="font-semibold text-gray-900">Table of Contents</h3>
+                    <h3 className="font-semibold text-gray-900">
+                      Table of Contents
+                    </h3>
                   </div>
                   <nav className="space-y-2">
                     {tableOfContents.map((item) => (
@@ -2518,7 +2559,9 @@ const ArticleDetail: React.FC = () => {
                         key={item.index}
                         href={`#${item.id}`}
                         className={`block text-sm hover:text-blue-600 transition-colors ${
-                          item.level === 2 ? 'font-medium text-gray-900' : 'text-gray-600 ml-4'
+                          item.level === 2
+                            ? "font-medium text-gray-900"
+                            : "text-gray-600 ml-4"
                         }`}
                       >
                         {item.text}
@@ -2530,8 +2573,12 @@ const ArticleDetail: React.FC = () => {
             )}
 
             {/* Article Content */}
-            <div className={`${tableOfContents.length > 0 ? 'lg:col-span-3' : 'lg:col-span-4'}`}>
-              <div 
+            <div
+              className={`${
+                tableOfContents.length > 0 ? "lg:col-span-3" : "lg:col-span-4"
+              }`}
+            >
+              <div
                 className="prose prose-lg max-w-none 
                   prose-headings:text-gray-900 prose-headings:font-bold prose-headings:mb-4 prose-headings:mt-8
                   prose-h2:text-2xl prose-h2:border-b prose-h2:border-gray-200 prose-h2:pb-2
@@ -2542,7 +2589,7 @@ const ArticleDetail: React.FC = () => {
                   prose-ul:my-4 prose-ul:pl-6 prose-li:mb-2 prose-li:text-gray-700
                   prose-ol:my-4 prose-ol:pl-6
                   prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-gray-600
-                  prose-code:text-blue-600 prose-code:bg-blue-50 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm prose-code:font-mono
+                   prose-code:text-[#d4d4d4] prose-code:bg-[#111827] prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm prose-code:font-mono
                   prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:p-4 prose-pre:rounded-lg prose-pre:overflow-x-auto prose-pre:my-6
                   prose-pre:border prose-pre:border-gray-700"
                 dangerouslySetInnerHTML={{ __html: article.content }}
