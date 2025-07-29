@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Mail, Phone, MapPin, Github, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Code } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const footerSections = [
@@ -28,35 +28,6 @@ const Footer: React.FC = () => {
         },
         {
           name: 'Interview Preparation',
-          url: '#'
-        }
-      ]
-    },
-    {
-      title: 'Community',
-      links: [
-        {
-          name: 'Discussion Forums',
-          url: '#'
-        },
-        {
-          name: 'Live Events',
-          url: "#"
-        },
-        {
-          name: 'Study Groups',
-          url: '#'
-        },
-        {
-          name: 'Mentorship Program',
-          url: '#'
-        },
-        {
-          name: 'Success Stories',
-          url: '#'
-        },
-        {
-          name: 'Alumni Network',
           url: '#'
         }
       ]
@@ -138,20 +109,6 @@ const Footer: React.FC = () => {
                 Empowering the next generation of software engineers through free mentorship, 
                 community support, and hands-on learning opportunities.
               </p>
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Github className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Twitter className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Instagram className="w-5 h-5" />
-                </a>
-              </div>
             </div>
 
             {/* Footer Links */}
@@ -176,42 +133,11 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Contact Information */}
-        <div className="py-8 border-t border-gray-800">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="flex items-center space-x-3">
-              <Mail className="w-5 h-5 text-blue-400" />
-              <div>
-                <div className="font-medium">Email</div>
-                <a href="mailto:hello@devmentors.com" className="text-gray-400 hover:text-white transition-colors">
-                  hello@devmentors.com
-                </a>
-              </div>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Phone className="w-5 h-5 text-blue-400" />
-              <div>
-                <div className="font-medium">Phone</div>
-                <a href="tel:+15551234567" className="text-gray-400 hover:text-white transition-colors">
-                  +1 (555) 123-4567
-                </a>
-              </div>
-            </div>
-            <div className="flex items-center space-x-3">
-              <MapPin className="w-5 h-5 text-blue-400" />
-              <div>
-                <div className="font-medium">Address</div>
-                <div className="text-gray-400">San Francisco, CA</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Bottom Footer */}
         <div className="py-6 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm">
-              © 2024 DevMentors. All rights reserved.
+              © 2025 DevMentors. All rights reserved.
             </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
