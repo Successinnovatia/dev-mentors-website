@@ -76,10 +76,10 @@ const Footer: React.FC = () => {
           name: 'Documentation',
           url: '#'
         },
-        {
-          name: 'Blog',
-          url: '/blog',
-        },
+        // {
+        //   name: 'Blog',
+        //   url: '/blog',
+        // },
         {
           name: 'Career Guide',
           url: '#'

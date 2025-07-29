@@ -10,8 +10,8 @@ import About from './components/About';
 import Contact from './components/Contact';
 import JoinUs from './components/JoinUs';
 import EventRegister from './components/EventRegister';
-import BlogLanding from './components/blog/BlogLanding';
-import ArticleDetail from './components/blog/ArticleDetail';
+// import BlogLanding from './components/blog/BlogLanding';
+// import ArticleDetail from './components/blog/ArticleDetail';
 import Footer from './components/Footer';
 
 function App() {
@@ -41,8 +41,8 @@ function App() {
           path="/register/:eventId"
           element={<EventRegister onBack={() => navigate('/events')} />}
         />
-        <Route path="/blog" element={<BlogLanding />} />
-        <Route path="/blog/:slug" element={<ArticleDetail />} />
+        {/* <Route path="/blog" element={<BlogLanding />} />
+        <Route path="/blog/:slug" element={<ArticleDetail />} /> */}
       </Routes>
       <Footer />
     </div>
