@@ -80,10 +80,10 @@ const Footer: React.FC = () => {
         //   name: 'Community Guidelines',
         //   url: '#'
         // },
-        {
-          name: 'Terms of Service',
-          url: '#'
-        },
+        // {
+        //   name: 'Terms of Service',
+        //   url: '#'
+        // },
         {
           name: 'Privacy Policy',
           url: '#'
@@ -140,9 +140,6 @@ const Footer: React.FC = () => {
               © 2025 DevMentors. All rights reserved.
             </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
-                Terms of Service
-              </a>
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
                 Privacy Policy
               </a>

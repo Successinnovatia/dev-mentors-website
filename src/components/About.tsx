@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Award, Target, Heart, Linkedin, Twitter, Github, Mail } from 'lucide-react';
+import {Users, Award, Target, Heart, Mail, Github, Library} from 'lucide-react';
 import Success from './Success';
 import { useNavigate } from 'react-router-dom';
 const About: React.FC = () => {
@@ -13,9 +13,8 @@ const About: React.FC = () => {
       background: 'Software Engineer, Community Builder, Education Advocate',
       expertise: ['Software Engineering', 'Community Building', 'Tech Education'],
       social: {
-        linkedin: '#',
-        twitter: '#',
-        github: '#'
+        blog: 'https://jimohyusuph.hashnode.dev',
+        github: 'https://github.com/yusuphjoluwasen',
       }
     },
   ];
@@ -192,11 +191,8 @@ const About: React.FC = () => {
                   </div>
 
                   <div className="flex space-x-6 justify-center md:justify-start">
-                    <a href={founders[0].social.linkedin} className="text-gray-400 hover:text-blue-600 transition-colors p-2 rounded-full hover:bg-white">
-                      <Linkedin className="w-7 h-7" />
-                    </a>
-                    <a href={founders[0].social.twitter} className="text-gray-400 hover:text-blue-400 transition-colors p-2 rounded-full hover:bg-white">
-                      <Twitter className="w-7 h-7" />
+                    <a href={founders[0].social.blog} className="text-gray-400 hover:text-blue-600 transition-colors p-2 rounded-full hover:bg-white">
+                      <Library className="w-7 h-7" />
                     </a>
                     <a href={founders[0].social.github} className="text-gray-400 hover:text-gray-900 transition-colors p-2 rounded-full hover:bg-white">
                       <Github className="w-7 h-7" />
