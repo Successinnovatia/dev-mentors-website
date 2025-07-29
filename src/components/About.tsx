@@ -9,7 +9,7 @@ const About: React.FC = () => {
       name: 'Yusuf Jimoh',
       role: 'Founder & CEO',
       image: '/yusuf-jimoh-ceo.jpg',
-      bio: 'Yusuf Jimoh is a Fullstack and Mobile Software Engineer specializing in scalable backend systems and impactful mobile apps across fintech and emerging tech. With expertise in Swift, Kotlin, Python, Java, and C++, he has built solutions used by millions and deployed across sectors like banking, e-commerce, and education. Passionate about mentorship and open-source, Yusuf founded DevMentor to support underrepresented talent and promote inclusive, real-world tech education.',
+      bio: 'Yusuf Jimoh is a Fullstack and Mobile Software Engineer specializing in scalable backend systems and impactful mobile apps across fintech and emerging tech. With expertise in Python, Swift, Kotlin, Java, and C++, he has built solutions used by millions and deployed across sectors like banking, e-commerce, and education. Passionate about mentorship and open-source, Yusuf founded DevMentor to support underrepresented talent and promote inclusive, real-world tech education.',
       background: 'Software Engineer, Community Builder, Education Advocate',
       expertise: ['Software Engineering', 'Community Building', 'Tech Education'],
       social: {

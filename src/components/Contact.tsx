@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle, User, MessageSquare } from 'lucide-react';
+import { Send, CheckCircle } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -40,27 +40,6 @@ const Contact: React.FC = () => {
       });
     }, 3000);
   };
-
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: 'Email',
-      details: 'hello@devmentors.com',
-      description: 'Send us an email anytime'
-    },
-    {
-      icon: Phone,
-      title: 'Phone',
-      details: '+1 (555) 123-4567',
-      description: 'Mon-Fri from 8am to 5pm PST'
-    },
-    {
-      icon: MapPin,
-      title: 'Office',
-      details: 'San Francisco, CA',
-      description: 'Come say hello at our HQ'
-    }
-  ];
 
   const faqs = [
     {
@@ -129,6 +108,10 @@ const Contact: React.FC = () => {
             {/* Contact Form */}
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Send us a Message</h2>
+              <p className="text-gray-600 mb-8">
+                We're here to help. Reach out to us to learn more about our
+                in-person training programs, and we'll get back to you as soon as possible.
+              </p>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -221,29 +204,6 @@ const Contact: React.FC = () => {
               </form>
             </div>
 
-            {/* Contact Information */}
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact Information</h2>
-              <p className="text-gray-600 mb-8">
-                We're here to help! Reach out to us through any of these channels to learn more about our 
-                in-person training programs, and we'll get back to you as soon as possible.
-              </p>
-
-              <div className="space-y-6 mb-12">
-                {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="bg-gradient-to-r from-blue-600 to-purple-600 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <info.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900">{info.title}</h3>
-                      <p className="text-blue-600 font-medium">{info.details}</p>
-                      <p className="text-sm text-gray-500">{info.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
               {/* FAQ Section */}
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h3>
@@ -258,7 +218,6 @@ const Contact: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
       </section>
     </div>
   );
