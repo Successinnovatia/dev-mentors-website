@@ -32,42 +32,42 @@ const Footer: React.FC = () => {
         }
       ]
     },
-    {
-      title: 'Resources',
-      links: [
-        {
-          name: 'Learning Paths',
-          url: '#'
-        },
-        {
-          name: 'Code Challenges',
-          url: "#"
-        },
-        {
-          name: 'Documentation',
-          url: '#'
-        },
-        // {
-        //   name: 'Blog',
-        //   url: '/blog',
-        // },
-        {
-          name: 'Career Guide',
-          url: '#'
-        },
-        {
-          name: 'Salary Guide',
-          url: '#'
-        }
-      ]
-    },
+    // {
+    //   title: 'Resources',
+    //   links: [
+    //     {
+    //       name: 'Learning Paths',
+    //       url: '#'
+    //     },
+    //     {
+    //       name: 'Code Challenges',
+    //       url: "#"
+    //     },
+    //     {
+    //       name: 'Documentation',
+    //       url: '#'
+    //     },
+    //     // {
+    //     //   name: 'Blog',
+    //     //   url: '/blog',
+    //     // },
+    //     {
+    //       name: 'Career Guide',
+    //       url: '#'
+    //     },
+    //     // {
+    //     //   name: 'Salary Guide',
+    //     //   url: '#'
+    //     // }
+    //   ]
+    // },
     {
       title: 'Support',
       links: [
-        {
-          name: 'Help Center',
-          url: '#'
-        },
+        // {
+        //   name: 'Help Center',
+        //   url: '#'
+        // },
         {
           name: 'Contact Us',
           url: "#"
@@ -76,10 +76,10 @@ const Footer: React.FC = () => {
           name: 'FAQ',
           url: '#'
         },
-        {
-          name: 'Community Guidelines',
-          url: '#'
-        },
+        // {
+        //   name: 'Community Guidelines',
+        //   url: '#'
+        // },
         {
           name: 'Terms of Service',
           url: '#'
